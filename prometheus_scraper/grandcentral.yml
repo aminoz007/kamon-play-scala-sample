@@ -1,0 +1,38 @@
+slack_channel: java-agent-bots
+require_sidekick_approval: false
+deploy_mechanism: marathon
+docker_image: cf-registry.nr-ops.net/java-agent/prometheus-scraper-sample
+
+container_ports:
+  - 8080
+
+datacenter: chicago
+
+base_environment:
+  memory_mb: 2048
+  secret_env_vars:
+    - name: LICENSE_KEY
+
+disable_default_environments: true
+
+environments:
+  - name: staging
+    cpus: 2
+    allow_instances_to_be_destroyed: true
+    instances: 1
+    canaries:
+      - name: canary
+        auto_deploy_on_master_merge: true
+    auto_deploy_from_canary:
+      enabled: true
+      wait_minutes: 2
+    env_vars:
+      NEW_RELIC_APP_NAME: 'prometheus-scraper-sample'
+      VERBOSE: 'true'
+
+health_checks:
+  - protocol: 'TCP'
+    port_index: 0
+
+docker_build:
+  image_name: prometheus-scraper-sample

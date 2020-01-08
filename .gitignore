@@ -1,0 +1,73 @@
+*.class
+*.log
+.history
+*.sc
+.pygments-cache
+.DS_Store
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.ensime
+.ensime_cache
+
+# Scala-IDE specific
+.scala_dependencies
+.idea
+.idea_modules
+
+# Eclipse
+.project
+.settings
+.classpath
+.cache
+.cache-main
+.cache-tests
+bin/
+
+_site
+
+# Ignore Play! working directory #
+db
+eclipse
+lib
+log
+logs
+modules
+precompiled
+project/project
+project/target
+target
+target/.history
+tmp
+test-result
+server.pid
+*.iml
+*.eml
+docs/target
+gatling/target
+
+# Default sigar library provision location.
+native/
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+out
+
+# Ignore IntelliJ files
+.DS_Store
+*.iws
+*.ipr
+*.iml
+.idea
+.shelf
+
+# Ingore GrandCentral build cache
+.grand-central-build-dependencies-cache

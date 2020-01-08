@@ -1,0 +1,2 @@
+GET   /v1/time      v1.time.TimeController.get()
+->    /v1/posts     v1.post.PostRouter
